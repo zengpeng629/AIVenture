@@ -8,7 +8,11 @@ async def story_client():
             message = await websocket.recv()
             data = json.loads(message)
             
-            if data["type"] == "options":
+            if data["type"] == "name":
+                response = input(data["data"])
+                await websocket.send(response)
+
+            elif data["type"] == "options":
                 print("\n新的选择到来:")
                 for idx, option in enumerate(data["data"], 1):
                     print(f"{idx}. {option}")
