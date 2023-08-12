@@ -1,2 +1,2 @@
-# project-neo
+# AIVenture
 A future party game.
